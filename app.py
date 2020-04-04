@@ -1,13 +1,13 @@
-import streamlit as st
 import pandas as pd
 import numpy as np
+import streamlit as st 
+from PIL import Image
 
-st.title("Image Enhancement")
-st.markdown(
-"""
-This is a demo of a Streamlit app that shows the Uber pickups
-geographical distribution in New York City. Use the slider
-to pick a specific hour and look at how the charts change.
+st.title("Upload + Classification Example")
 
-[See source code](https://github.com/streamlit/demo-uber-nyc-pickups/blob/master/app.py)
-""")
+uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+if uploaded_file is not None:
+    image = Image.open(uploaded_file)
+    st.image(image, caption='Uploaded Image.', use_column_width=True)
+    st.write("")
+    st.write("Classifying...")
