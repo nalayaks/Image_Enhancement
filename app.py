@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st 
 from PIL import Image
 
-st.title("Upload + Classification Example")
+st.title("Image Enhancement")
 
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 if uploaded_file is not None:
