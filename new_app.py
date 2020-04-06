@@ -15,4 +15,4 @@ if uploaded_file is not None:
     st.write("")
     st.write("Enhancing...")
     sr_img_gan = rrdn.predict(image)
-    return sr_img_gan
+    st.image(sr_img_gan, caption='Uploaded Image.', use_column_width=True)
