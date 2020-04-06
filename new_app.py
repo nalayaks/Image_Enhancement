@@ -19,6 +19,6 @@ if uploaded_file is not None:
     st.image(image, caption='Uploaded Image.', use_column_width=True)
     st.write("")
     st.write("Classifying...")
-    sr_img_gan = rrdn.predict(lr_img)
+    sr_img_gan = rrdn.predict(uploaded_file)
     predicted=Image.fromarray(sr_img_gan)
     st.image(predicted, caption='Enhanced Image.', use_column_width=True)
