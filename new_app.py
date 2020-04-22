@@ -14,7 +14,7 @@ def enhanced(image1):
     sr_img_gan = model.predict(np.array(image1,dtype=float))
     return Image.fromarray(sr_img_gan)
 
-uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+uploaded_file = st.file_uploader("Choose an image....", type="jpg")
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption='Uploaded Image.', use_column_width=True)
