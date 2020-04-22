@@ -11,12 +11,11 @@ from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.applications.vgg16 import preprocess_input
 from ISR.models import RDN
+model = RDN(weights='noise-cancel')
 
 #@st.cache(suppress_st_warning=True)
 def enhanced(image1):
     ###
-    model = RDN(weights='noise-cancel')
-    
     ###
     image = load_img(image1)
     # convert the image pixels to a numpy array
