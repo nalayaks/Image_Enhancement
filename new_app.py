@@ -10,7 +10,7 @@ st.title("Image Enhancement")
 from ISR.models import RDN
 
 def enhanced(image1):
-    model = RDN(weights='noise-cancel')
+    model = RDN(weights='psnr-small')
     sr_img_gan = model.predict(np.array(image1))
     return Image.fromarray(sr_img_gan)
 
