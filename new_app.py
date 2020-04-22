@@ -11,7 +11,7 @@ from ISR.models import RDN
 
 def enhanced(image1):
     model = RDN(weights='psnr-small')
-    sr_img_gan = model.predict(np.array(image1,dtype=float))
+    sr_img_gan = model.predict(np.array(image1))
     return Image.fromarray(sr_img_gan)
 
 uploaded_file = st.file_uploader("Choose an image....", type="jpg")
