@@ -15,10 +15,10 @@ from ISR.models import RDN
 
 def enhanced(image1):
     ###
-    model = RDN(weights='psnr-small')
+    model = RDN(weights='noise-cancel')
     
     ###
-    image = load_img(image1, target_size=(224, 224))
+    image = load_img(image1)
     # convert the image pixels to a numpy array
     image = img_to_array(image)
     # reshape data for the model
