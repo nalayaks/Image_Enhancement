@@ -12,7 +12,7 @@ from keras.preprocessing.image import img_to_array
 from keras.applications.vgg16 import preprocess_input
 from ISR.models import RDN
 
-@st.cache(suppress_st_warning=True)
+#@st.cache(suppress_st_warning=True)
 def enhanced(image1):
     ###
     model = RDN(weights='noise-cancel')
