@@ -25,6 +25,34 @@ def enhanced(image1):
     sr_img_gan = model.predict(image)
     return Image.fromarray(sr_img_gan)
 
+#def im2double(im):
+#    if im.dtype == 'uint8':
+#        out = im.astype('float') / 255
+#    elif im.dtype == 'uint16':
+#        out = im.astype('float') / 65535
+#    elif im.dtype == 'float':
+#        out = im
+#    else:
+#        assert False
+#    out = np.clip(out, 0, 1)
+ #   return out
+    
+#import cv2
+ 
+# Opens the Video file
+#cap= cv2.VideoCapture('/Users/sysadmin/Downloads/Video Enhancement unit/Fail/abids/Bharat Interior_shivaji bridge-2020-02-25_05h40min00s000ms.mp4')
+#i=0
+#while(cap.isOpened()):
+#    ret, frame = cap.read()
+#    if ret == False:
+#        break
+#    cv2.imwrite('kang'+str(i)+'.jpg',frame)
+#    i+=1
+ 
+#cap.release()
+#cv2.destroyAllWindows()
+#cv2.waitKey()     
+
 
 uploaded_file = st.file_uploader("Choose an image....", type="jpg")
 if uploaded_file is not None:
