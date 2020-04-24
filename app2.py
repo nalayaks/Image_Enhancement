@@ -25,10 +25,10 @@ def enhanced(image1):
     image = img_to_array(image)
     # reshape data for the model
     #image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
-    noise_cancel = model1.predict(np.array(image))
-    GANS_IMAGE = model2.predict(np.array(image))
-    psnr_small_image= model3.predict(np.array(image))
-    psnr_large_image= model4.predict(np.array(image))
+    noise_cancel = Image.fromarray(model1.predict(np.array(image)))
+    GANS_IMAGE = Image.fromarray(model2.predict(np.array(image)))
+    psnr_small_image= Image.fromarray(model3.predict(np.array(image)))
+    psnr_large_image= Image.fromarray(model4.predict(np.array(image)))
     
     im_list=[image,noise_cancel,GANS_IMAGE,psnr_small_image,psnr_large_image]
     min_height = min(im.height for im in im_list)
