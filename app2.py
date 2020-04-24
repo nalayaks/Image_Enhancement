@@ -30,7 +30,7 @@ def enhanced(image1):
     psnr_small_image= model3.predict(np.array(local_image))
     psnr_large_image= model4.predict(np.array(local_image))
     
-    im_list=[local_image,noise_cancel,GANS_IMAGE,psnr_small_image,psnr_large_image]
+    im_list=[image,noise_cancel,GANS_IMAGE,psnr_small_image,psnr_large_image]
     min_height = min(im.height for im in im_list)
     im_list_resize = [im.resize((int(im.width * min_height / im.height), min_height),resample=Image.BICUBIC)
                       for im in im_list]
